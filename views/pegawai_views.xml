@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- model.name inherit tree view -->
+
+
+    <!-- model.name action window -->
+    <record id="res_partner_pegawai2_action" model="ir.actions.act_window">
+        <field name="name">Pegawai</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{
+            'search_default_pegawainya' : 1,
+            'default_is_employee' : True
+        }</field>
+    </record>
+    
+    
+    <!-- model.name inherit form view -->
+    <record id="res_partner_pegawai_view_id" model="ir.ui.view">
+        <field name="name">model.name.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <field name="vat" position="after">
+                <field name="is_employee"/>
+                <field name="is_customer"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- model.name inherit search view -->
+    <record id="res_partner_inherit_search" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+              <field name="parent_id" position="after">
+                 <filter string="Customer" name="customer_nya" domain="[('is_customer', '=', True)]"/>
+                <filter string="Pegawai" name="pegawainya" domain="[('is_employee', '=', True)]"/>
+             </field>        
+        </field>
+    </record>
+
+
+
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hotel_pegawai_menu_act" 
+    name="Pegawai" 
+    parent="hotel_partner_menu_categ" 
+    action="res_partner_pegawai2_action" 
+    sequence="10"/>
+
+</odoo>

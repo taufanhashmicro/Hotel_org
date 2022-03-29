@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="hotel_kasur_view_tree" model="ir.ui.view">
+        <field name="name">Jenis Kasur</field>
+        <field name="model">hotel.kasur</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="deskripsi"/>
+                <field name="harga"/>
+                <!-- <field name="orderpanggungdetail_ids"/> -->
+            </tree>
+        </field>
+    </record>
+
+
+      <record id="hotel_kasur_view_form" model="ir.ui.view">
+        <field name="name">Kasur</field>
+        <field name="model">hotel.kasur</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                          <field name="name"/>
+                          <field name="harga"/>
+                          <field name="deskripsi"/>
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+
+
+     <record id="hotel_kasur_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis Kasur</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hotel.kasur</field>
+    </record>
+
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="hotel_akomodasi_kasur_menu_act" 
+    name="Jenis Kasur" 
+    parent="hotel_akomodasi_menu_categ" 
+    action="hotel_kasur_action"
+    sequence="20"/>
+
+</odoo>

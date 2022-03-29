@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hotel_kamar,access.hotel.kamar,model_hotel_kamar,base.group_user,1,1,1,1
+access_hotel_kasur,access.hotel.kasur,model_hotel_kasur,base.group_user,1,1,1,1
+access_hotel_fasilitas,access.hotel.fasilitas,model_hotel_fasilitas,base.group_user,1,1,1,1
+access_hotel_order,access.hotel.order,model_hotel_order,base.group_user,1,1,1,1
+access_hotel_kamardetail,access.hotel.kamardetail,model_hotel_kamardetail,base.group_user,1,1,1,1
+access_hotel_checkout,access.hotel.checkout,model_hotel_checkout,base.group_user,1,1,1,1
+access_hotel_akunting,access.hotel.akunting,model_hotel_akunting,base.group_user,1,1,1,1

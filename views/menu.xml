@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+    id="hotel_menu_root" 
+    name="Hotel Org"  
+    sequence="20"/>
+
+    <menuitem id="hotel_akomodasi_menu_categ" 
+    name="Akomodasi" parent="hotel_menu_root" 
+    sequence="10"/>
+
+    <menuitem id="hotel_order_menu_categ" 
+    name="Order" parent="hotel_menu_root" 
+    sequence="20"/>
+
+     <menuitem id="hotel_partner_menu_categ" 
+    name="Partner" parent="hotel_menu_root" 
+    sequence="30"/>
+</odoo>

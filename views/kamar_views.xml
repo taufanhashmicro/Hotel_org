@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="hotel_kamar_view_tree" model="ir.ui.view">
+        <field name="name">Jenis Kamar</field>
+        <field name="model">hotel.kamar</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="kasur_ids"/>
+                <field name="fasilitas_ids" widget="many2many_tags"/>
+                <field name="harga"/>
+                <field name="stok"/>
+                <!-- <field name="orderpanggungdetail_ids"/> -->
+            </tree>
+        </field>
+    </record>
+
+
+      <record id="hotel_kamar_view_form" model="ir.ui.view">
+        <field name="name">Hotel Kamar</field>
+        <field name="model">hotel.kamar</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                          <field name="name"/>
+                          <field name="kasur_ids"/>
+                          <field name="fasilitas_ids" widget="many2many_tags"/>
+                          <field name="harga"/>
+                          <field name="stok"/>
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+ 
+
+
+
+      <record id="hotel_kamar_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis Kamar</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hotel.kamar</field>
+    </record>
+
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="hotel_akomodasi_kamar_menu_act" 
+    name="Kamar" 
+    parent="hotel_akomodasi_menu_categ" 
+    action="hotel_kamar_action"
+    sequence="10"/>
+
+</odoo>
